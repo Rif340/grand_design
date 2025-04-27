@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap');
-@import url('animated.css');
+@import url('https://fonts.googleapis.com/css?family=Figtree');
 @import url('scrollbar.css');
-
-::-webkit-scrollbar {
-    display: none;
-}
+/* scroll pada mobile*/
+@import url('animated.css');
+/* animasi */
 
 body {
-    font-family: "Plus Jakarta Sans";
-    margin: 0;
-    padding: 0;
-    background-color: #110621;
-    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    line-height: inherit;
+    line-height: 1.6em;
+    font-weight: 400;
+}
+
+.page-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    min-width: 300px;
+    z-index: 9;
+    overflow: hidden;
 }
 
 .auto-container {
@@ -19,6 +29,13 @@ body {
     max-width: 1200px;
     padding: 0px 15px;
     margin: 0 auto;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 /* Posisi navbar kanan dan kiri */
@@ -39,6 +56,7 @@ body {
     top: 0px;
     width: 100%;
     height: 100%;
+    z-index: 999999;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -52,7 +70,7 @@ body {
     background-color: rgba(0, 0, 0, 0);
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(gambar/gearfull9.svg);
+    background-image: url(../img/icon/gear\ full\ 9.svg);
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
     -ms-transition: all 200ms ease;
@@ -71,7 +89,7 @@ body {
     background-color: rgba(0, 0, 0, 0);
     background-position: center center;
     background-repeat: no-repeat;
-    background-image: url(gambar/rebuildtanpagear.svg);
+    background-image: url(../img/icon/rebuild\ tanpa\ gear.svg);
     -webkit-transition: all 200ms ease;
     -moz-transition: all 200ms ease;
     -ms-transition: all 200ms ease;
@@ -145,15 +163,115 @@ body {
     background-color: #252742;
 }
 
+.main-header .header-top {
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+/* Live News */
+
+.live-news {
+    background: linear-gradient(to right, #320F48, #7A25AE);
+    position: fixed;
+    width: 115%;
+    height: 49px;
+    top: 0;
+    left: 0;
+}
+
+.live-news .rectangle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 310.5px;
+    height: 49px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: #1C1E32;
+}
+
+.live-news .rectangle .rectangle-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.live-news .rectangle .rectangle-shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 0;
+}
+
+.live-news .rectangle .kabinet-sinergis {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: "Figtree";
+}
+
+.live-news .rectangle .sinergis {
+    position: relative;
+    z-index: 2;
+    width: 57px;
+    height: 60px;
+    margin: 10px 30px 0 0;
+}
+
+.live-news .marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.live-news .marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 20s linear infinite;
+    color: white;
+    align-content: center;
+    line-height: 49px;
+    font-size: 19px;
+    font-family: "Figtree";
+}
+
+.live-news .marquee span a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.live-news .marquee span:hover {
+    animation-play-state: paused;
+}
+
+.main-header .header-top .top {
+    position: relative;
+}
+
 /*=== Header Upper ===*/
 .header-upper {
     position: relative;
     top: 0;
-    background-color: #643cb8;
+    background-color: #252742;
     height: 87px;
     left: 0;
     right: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    /* Shadow di bawah header */
     transition: top 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -353,18 +471,12 @@ body {
     transform: rotate(180deg);
     /* Rotates arrow on hover */
     opacity: 1;
-
-}
-
-.main-menu a {
-    text-decoration: none;
 }
 
 .main-menu .navigation>li>ul>li.dropdown>a:after {
     font-family: "Figtree";
     content: "\f105";
     position: absolute;
-    border-top-left-radius: 12px;
     right: 20px;
     top: 12px;
     display: block;
@@ -531,7 +643,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: #643cb8;
+    background: #252742;
     -webkit-transform: translateX(101%);
     -ms-transform: translateX(101%);
     transform: translateX(101%);
@@ -555,10 +667,6 @@ body {
     transform: translateX(0%);
 }
 
-.mobile-menu a {
-    text-decoration: none;
-}
-
 .mobile-menu .menu-box {
     position: absolute;
     left: 0px;
@@ -567,7 +675,7 @@ body {
     height: 100%;
     max-height: 100%;
     overflow-y: auto;
-    background: #643cb8;
+    background: #252742;
     padding: 0px 0px;
     z-index: 5;
     opacity: 0;
@@ -739,7 +847,6 @@ body {
 .mobile-menu .social-links li a:hover {
     color: #7A25AE;
 }
-
 /* =============== akhir mobile ================ */
 
 

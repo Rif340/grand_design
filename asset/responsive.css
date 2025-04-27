@@ -64,7 +64,6 @@
     /* =============== landing-page-grand-design-mobile ================ */
         .landing-page-grand-design-mobile {
             width: 100%;
-                min-height: 100vh;
                 background: linear-gradient(#100133, #27007f);
                 position: relative;
                 display: flex;
@@ -217,7 +216,7 @@
     margin-left: 0px !important;
   }
   .section-3{
-    margin-top: -40px !important; 
+    margin-top: -0px !important; 
   }
 }
 
