@@ -1,25 +1,25 @@
-(function($) {
-	
+(function ($) {
+
 	"use strict";
-	
+
 	//Hide Loading Box (Preloader)
 	function handlePreloader() {
-		if($('.preloader').length){
+		if ($('.preloader').length) {
 			$('body').addClass('page-loaded');
 			$('.preloader').delay(1000).fadeOut(300);
 		}
 	}
-	window.addEventListener("load", function() {
-    document.querySelector(".preloader").style.display = "none";
-});
+	window.addEventListener("load", function () {
+		document.querySelector(".preloader").style.display = "none";
+	});
 	//Update Header Style and Scroll to Top
 	function headerStyle() {
-		if($('.main-header').length){
+		if ($('.main-header').length) {
 			var windowpos = $(window).scrollTop();
 			var headerUpper = $('.header-upper');
 			var headerTop = $('.header-top');
 			var scrollLink = $('.scroll-to-top');
-			
+
 			// Cek jika scroll lebih dari 100px
 			if (windowpos > 136) {
 				// Menambahkan kelas sticky pada header-upper
@@ -38,65 +38,65 @@
 			}
 		}
 	}
-	
-	$(window).on('scroll', function() {
+
+	$(window).on('scroll', function () {
 		headerStyle();
 	});
-	
-	
+
+
 	headerStyle();
 
-	$(window).on('scroll', function() {
+	$(window).on('scroll', function () {
 		headerStyle();
 	});
 
 	//Submenu Dropdown Toggle
-	if($('.main-header li.dropdown ul').length){
+	if ($('.main-header li.dropdown ul').length) {
 		$('.main-header .navigation li.dropdown').append('<div class="dropdown-btn"><span class="fa fa-angle-right"></span></div>');
-		
+
 	}
 
 	//Mobile Nav Hide Show
-	if($('.mobile-menu').length){
-		
+	if ($('.mobile-menu').length) {
+
 		$('.mobile-menu .menu-box').mCustomScrollbar();
-		
+
 		var mobileMenuContent = $('.main-header .nav-outer .main-menu').html();
 		$('.mobile-menu .menu-box .menu-outer').append(mobileMenuContent);
 		$('.sticky-header .main-menu').append(mobileMenuContent);
-		
+
 		//Dropdown Button
-		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function() {
+		$('.mobile-menu li.dropdown .dropdown-btn').on('click', function () {
 			$(this).toggleClass('open');
 			$(this).prev('ul').slideToggle(500);
 		});
 		//Menu Toggle Btn
-		$('.mobile-nav-toggler').on('click', function() {
+		$('.mobile-nav-toggler').on('click', function () {
 			$('body').addClass('mobile-menu-visible');
 		});
 
 		//Menu Toggle Btn
-		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function() {
+		$('.mobile-menu .menu-backdrop,.mobile-menu .close-btn').on('click', function () {
 			$('body').removeClass('mobile-menu-visible');
 		});
 	}
 
 	// Scroll to a Specific Div
-	if($('.scroll-to-target').length){
-		$(".scroll-to-target").on('click', function() {
+	if ($('.scroll-to-target').length) {
+		$(".scroll-to-target").on('click', function () {
 			var target = $(this).attr('data-target');
-		   // animate
-		   $('html, body').animate({
-			   scrollTop: $(target).offset().top
-			 }, 1500);
-	
+			// animate
+			$('html, body').animate({
+				scrollTop: $(target).offset().top
+			}, 1500);
+
 		});
 	}
 	// Loading masuk page akan di gantikan dengan fungsi berikut
-	
-	$(window).on('load', function() {
+
+	$(window).on('load', function () {
 		handlePreloader();
-	});	
+	});
 
 })(window.jQuery);
 
@@ -108,61 +108,61 @@ let image = document.querySelector('.image-hero');
 
 let scrollY = 0;
 let targetScrollY = 0;
-let easing = 0.5; 
+let easing = 0.5;
 
 function smoothScroll() {
-    targetScrollY = window.scrollY;
-    scrollY += (targetScrollY - scrollY) * easing;
+	targetScrollY = window.scrollY;
+	scrollY += (targetScrollY - scrollY) * easing;
 
-    text.style.transform = `translateX(${-scrollY * 2.5}px)`;
-    image.style.transform = `translateY(${scrollY * 2.5}px)`;
+	text.style.transform = `translateX(${-scrollY * 2.5}px)`;
+	image.style.transform = `translateY(${scrollY * 2.5}px)`;
 
-    requestAnimationFrame(smoothScroll);
+	requestAnimationFrame(smoothScroll);
 }
 
 window.addEventListener('scroll', () => {
-    requestAnimationFrame(smoothScroll);
+	requestAnimationFrame(smoothScroll);
 });
 
 
 // CARD HIMTIKA
 var swiper = new Swiper('.swiper-container', {
-    loop: true,
-    grapCursor: true,
-    spaceBetween: 65,
+	loop: true,
+	grapCursor: true,
+	spaceBetween: 65,
 
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-        0: {
-            slidesPerView: 1
-        },
-        620: {
-            slidesPerView: 2
-        },
-        1024: {
-            slidesPerView: 3
-        }
-    }
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+		dynamicBullets: true
+	},
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	breakpoints: {
+		0: {
+			slidesPerView: 1
+		},
+		620: {
+			slidesPerView: 2
+		},
+		1024: {
+			slidesPerView: 3
+		}
+	}
 });
 
 
 // ACCORDION
 document.querySelectorAll('.accordion-toggle').forEach((checkbox) => {
-    checkbox.addEventListener('change', function() {
-      if (this.checked) {
-        document.querySelectorAll('.accordion-toggle').forEach((other) => {
-          if (other !== this) {
-            other.checked = false;
-          }
-        });
-      }
-    });
-  });
+	checkbox.addEventListener('change', function () {
+		if (this.checked) {
+			document.querySelectorAll('.accordion-toggle').forEach((other) => {
+				if (other !== this) {
+					other.checked = false;
+				}
+			});
+		}
+	});
+});

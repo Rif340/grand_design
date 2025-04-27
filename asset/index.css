@@ -353,11 +353,11 @@ body {
     transform: rotate(180deg);
     /* Rotates arrow on hover */
     opacity: 1;
-      
+
 }
 
-.main-menu a{
-text-decoration: none;
+.main-menu a {
+    text-decoration: none;
 }
 
 .main-menu .navigation>li>ul>li.dropdown>a:after {
@@ -531,7 +531,7 @@ text-decoration: none;
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: #252742;
+    background: #643cb8;
     -webkit-transform: translateX(101%);
     -ms-transform: translateX(101%);
     transform: translateX(101%);
@@ -555,6 +555,10 @@ text-decoration: none;
     transform: translateX(0%);
 }
 
+.mobile-menu a {
+    text-decoration: none;
+}
+
 .mobile-menu .menu-box {
     position: absolute;
     left: 0px;
@@ -563,7 +567,7 @@ text-decoration: none;
     height: 100%;
     max-height: 100%;
     overflow-y: auto;
-    background: #252742;
+    background: #643cb8;
     padding: 0px 0px;
     z-index: 5;
     opacity: 0;
@@ -740,28 +744,29 @@ text-decoration: none;
 
 
 /* =============== landing-page-grand-design-desktop ================ */
-.landing-page-grand-design-desktop{
+.landing-page-grand-design-desktop {
     width: 100%;
-    height:100%;
-    background:linear-gradient(#100133,#27007f);
+    height: 100%;
+    background: linear-gradient(#100133, #27007f);
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-.landing-page-grand-design-desktop img:nth-child(1){
+.landing-page-grand-design-desktop img:nth-child(1) {
     position: absolute;
-        top: 0;
-        right: 0;
-        width: 40%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
+
 .landing-page-grand-design-desktop img:nth-child(2) {
-position: absolute;
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 128px;
@@ -771,7 +776,7 @@ position: absolute;
     display: block;
 }
 
-.grand-design-content{
+.grand-design-content {
     width: 50%;
     height: 50%;
     display: flex;
@@ -779,14 +784,114 @@ position: absolute;
     margin-left: 2rem;
     margin-top: 18rem;
     color: white;
-    gap:2rem;
+    gap: 2rem;
 }
-
 
 /* =============== akhir landing-page-grand-design-desktop ================ */
 
+/* =============== awal pdf-landing-page-grand-design ================*/
+.pdf-grand-design {
+    width: 100%;
+    height: max-content;
+    background: linear-gradient(#100133, #27007f);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
 
+.pdf-grand-design .text-pdf {
+    margin-block: 5%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
 
+.pdf-grand-design .text-pdf .text1{
+    font-weight: 800;
+    font-size:1em;
+}
+
+.pdf-grand-design .text-pdf .text2{
+    margin-top:1em;
+}
+
+.pdf-grand-design .gambar-pdf {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5%;
+}
+
+/* =============== Akhir pdf-landing-page-grand-design ================*/
+
+/* =============== landing-page-grand-design-mobile ================*/
+.landing-page-grand-design-mobile {
+    display: none;
+}
+
+/* =============== akhir landing-page-grand-design-mobile ================*/
+/* =============== gambar pdf ================*/
+.gambar-pdf .pdf2 {
+    display: none;
+}
+
+.gambar-pdf .pdf1 {
+    display: block;
+}
+
+/* =============== akhir gambar pdf ================*/
+/* =============== Live Kabinet ================*/
+/* laynard 2 */
+.live-kabinet {
+    width: 100%;
+    height: 64px;
+    background-color: #643cb8;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+}
+
+@keyframes tickerMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.live-kabinet .live {
+    min-width: 10%;
+    display: flex;
+    align-items: center;
+    padding: 0 70px;
+    flex-shrink: 0;
+    animation: tickerMove 1.5s linear infinite;
+}
+
+.live-kabinet img {
+    width: 48px;
+    height: 32px;
+}
+
+.live-kabinet span {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =============== akhir Live Kabinet ================*/
 
 /* =============== section Footer ================ */
 footer {
